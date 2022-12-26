@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, user-scalable=no" />
+      <title>{{gallery.title}} - {{album.title}}</title>
+      <link rel="stylesheet" href="{{relative 'public/lightgallery2/css/lightgallery-bundle.css'}}" />
+      <link rel="stylesheet" href="{{relative 'public/core.css'}}" />
+      <link rel="stylesheet" href="{{relative 'public/theme.css'}}" />
+  </head>
+
+  <body>
+
+    {{> content}}
+    {{> video-loader}}
+
+    <script src="{{relative 'public/jquery.min.js'}}"></script>
+
+    <!-- LightGallery -->
+    <script src="{{relative 'public/lightgallery2/lightgallery.min.js'}}"></script>
+    <script src="{{relative 'public/lightgallery2/plugins/zoom/lg-zoom.umd.js'}}"></script>
+    <script src="{{relative 'public/lightgallery2/plugins/thumbnail/lg-thumbnail.umd.js'}}"></script>
+
+    {{!-- <script>
+      $(document).ready(function() {
+        $("#media").lightGallery({
+          thumbWidth: 80,
+          controls: true,
+          loop : false,
+          download: true,
+          counter: true,
+          videojs: true,
+          fullScreen: true,
+          zoom: true
+        });
+      });
+    </script> --}}
+
+    <script type="text/javascript">
+      lightGallery(document.getElementById('lightgallery'), {
+        speed: 500,
+        loop : false,
+        download: true,
+        controls: true,
+        counter: true,
+        
+        thumbnail: true,
+        toggleThumb: true,
+        animateThumb: true,
+        allowMediaOverlap: true,
+        enableThumbDrag: true,
+        thumbWidth: 75,
+        thumbHeight: "50px",
+
+        plugins: [lgZoom, lgThumbnail]
+      });
+      console.log("started lightgallery")
+    </script>
+
+  </body>
+
+</html>

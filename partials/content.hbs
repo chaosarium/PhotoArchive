@@ -1,0 +1,76 @@
+<div id="container">
+  
+  <!-- Title -->
+  <header>
+    <h1><a href="{{relative gallery.home.url}}">{{gallery.title}}</a></h1>
+  </header>
+
+  <!-- Album breadcrumbs -->
+  <nav class="breadcrumbs" style="outline: red solid 1px;">
+    {{#each breadcrumbs~}}
+      <a class="breadcrumb-item" href="{{relative url}}">{{title}}</a>&nbsp;/&nbsp;
+    {{~/each~}}
+    <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
+  </nav>
+
+  <!-- Subalbums -->
+  <div id="albums" style="outline: green solid 1px;">
+    {{#each album.albums~}}
+      <a href="{{relative url}}" style="background-image: url('{{relative previews.0.urls.small}}')">
+        <div class="info">
+          <h3>{{title}}</h3>
+          <div class="summary">{{summary}}</div>
+          <div class="date">{{{date stats.fromDate}}} - {{{date stats.toDate}}}</div>
+        </div>
+      </a>
+    {{~/each}}
+  </div>
+
+  <!-- Gallery -->
+  <div style="outline: blue solid 1px;">
+    <ul id="lightgallery" class="clearfix">
+        {{#each album.files~}}
+
+            <li data-src="{{relative urls.large}}" data-sub-html="{{#if meta.caption}}{{meta.caption}}{{else}}{{filename}}, {{date}}{{/if}}" data-download-url="{{relative urls.download}}" data-filename="">
+                <a href="{{relative urls.large}}">
+                <img src="{{relative urls.thumbnail}}" alt="{{filename}}" width="120" height="120">
+                </a>
+            </li>
+        {{!-- {{> thumbnail}} --}}
+        {{~/each}}
+    </ul>
+  </div>
+
+
+  <!-- TODO Pagination -->
+  {{#compare pagination.length '>' 1}}
+    <div>
+        <nav class="pagination">
+        Pages:
+        {{#each pagination}}
+            {{#if current}}
+            <a class="page current" href="{{relative url}}">{{index}}</a>
+            {{else}}
+            <a class="page" href="{{relative url}}">{{index}}</a>
+            {{/if}}
+        {{/each}}
+        </nav>
+    </div>
+  {{/compare}}
+
+  <!-- TODO Zip file -->
+  {{#if album.zip}}
+    <div id="zip">
+      Download album as a <a href="{{album.zip}}">zip file</a>.
+    </div>
+  {{/if}}
+
+
+  <!-- TODO Footer -->
+  {{#if gallery.footer}}
+  <footer>
+    <p>{{{gallery.footer}}}</p>
+  </footer>
+  {{/if}}
+
+</div>
