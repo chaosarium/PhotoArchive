@@ -16,13 +16,7 @@
   <!-- Subalbums -->
   <div id="albums" style="outline: green solid 1px;">
     {{#each album.albums~}}
-      <a href="{{relative url}}" style="background-image: url('{{relative previews.0.urls.small}}')">
-        <div class="info">
-          <h3>{{title}}</h3>
-          <div class="summary">{{summary}}</div>
-          <div class="date">{{{date stats.fromDate}}} - {{{date stats.toDate}}}</div>
-        </div>
-      </a>
+        {{> subalbum}}
     {{~/each}}
   </div>
 
@@ -30,17 +24,10 @@
   <div style="outline: blue solid 1px;">
     <ul id="lightgallery" class="clearfix">
         {{#each album.files~}}
-
-            <li data-src="{{relative urls.large}}" data-sub-html="{{#if meta.caption}}{{meta.caption}}{{else}}{{filename}}, {{date}}{{/if}}" data-download-url="{{relative urls.download}}" data-filename="">
-                <a href="{{relative urls.large}}">
-                <img src="{{relative urls.thumbnail}}" alt="{{filename}}" width="120" height="120">
-                </a>
-            </li>
-        {{!-- {{> thumbnail}} --}}
+            {{> thumbnail}}
         {{~/each}}
     </ul>
   </div>
-
 
   <!-- TODO Pagination -->
   {{#compare pagination.length '>' 1}}
