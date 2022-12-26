@@ -4,6 +4,11 @@
 @breakpoint-mid: 1000px;
 @breakpoint-large: 1200px;
 
+@foreground: #000;
+@background: #fff;
+@secondary: rgb(200, 200, 200);
+@muted: rgb(234, 234, 234);
+
 #container {
   max-width: 1600px;
   margin: 0 auto;
@@ -83,15 +88,8 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-content: stretch;
-
   row-gap: 30px;
   column-gap: 30px;
-
-  // justify-content: space-between;
 }
 
 div.album {
@@ -102,9 +100,26 @@ div.album img.album-cover {
   aspect-ratio: 3 / 2;
   width: 100%;
   height: auto;
-  outline: auto;
 }
 
 div.album .album-info {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 
+  font-size: 0.8em;
+  
+  .album-title {
+    font-weight: 400;
+  }
+  .album-count {
+    color: @secondary;
+    font-weight: 300;
+  }
+}
+
+hr {
+  border: none;
+  border-top: @muted solid 1px;
+  margin: 30px 0;
 }

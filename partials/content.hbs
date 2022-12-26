@@ -1,6 +1,6 @@
 <div id="container">
 
-  <section class="layout">
+  <div class="layout">
     <div id="side">
 
       <!-- Title -->
@@ -35,16 +35,21 @@
     <div id="content">
 
       <!-- Subalbums -->
-      <div id="albums">
-        {{#each album.albums~}}
-          {{> subalbum}}
-        {{~/each}}
-      </div>
+      {{#if album.albums}}
+        <div id="albums">
+          {{#each album.albums~}}
+            {{> subalbum}}
+          {{~/each}}
+        </div>
+      {{/if}}
 
-      <div style="height: 300px;"></div>
+      <!-- divider -->
+      {{#if album.files}}{{#if album.albums}}
       <hr>
+      {{/if}}{{/if}}
 
       <!-- Gallery -->
+      {{#if album.files}}
       <div id="gallery">
         <ul id="lightgallery">
           {{#each album.files~}}
@@ -52,13 +57,13 @@
           {{~/each}}
         </ul>
       </div>
+      {{/if}}
 
       <hr>
-      
       Some informatio
 
     </div>
-  </section>
+  </div>
 
   <!-- TODO Pagination -->
   {{#compare pagination.length '>' 1}}
