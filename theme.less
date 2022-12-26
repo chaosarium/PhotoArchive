@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400;700;900&family=Libre+Barcode+128&family=Mrs+Saint+Delafield&display=swap');
 
-@breakpoint: 700px;
+@breakpoint-small: 700px;
+@breakpoint-mid: 1000px;
+@breakpoint-large: 1200px;
 
 #container {
   max-width: 1600px;
@@ -15,23 +17,28 @@
     "side"
     "content";
 
-  @media (min-width: @breakpoint) {
+  @media (min-width: @breakpoint-small) {
+    grid-template-columns: minmax(200px, 1fr) 3fr;
+    grid-template-areas: "side content";
+  }
+
+  @media (min-width: @breakpoint-mid) {
     grid-template-columns: minmax(300px, 1fr) 3fr;
     grid-template-areas: "side content";
   }
+
 }
 
 #side { 
   grid-area: side;
   padding: 30px;
   box-sizing: border-box;
-  overflow: hidden;
-  position: fixed;
 
-  @media (min-width: @breakpoint) {
+  @media (min-width: @breakpoint-small) {
     height: 100vh;
+    overflow: hidden;
+    position: fixed;
   }
-
 }
 #content { 
   grid-area: content;
@@ -58,4 +65,46 @@ a {
 
 footer {
   font-family: 'Inter', cursive;
+}
+
+#albums {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: @breakpoint-small) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: @breakpoint-mid) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: @breakpoint-large) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+
+  // display: flex;
+  // flex-wrap: wrap;
+  // align-content: stretch;
+
+  row-gap: 30px;
+  column-gap: 30px;
+
+  // justify-content: space-between;
+}
+
+div.album {
+}
+
+div.album img.album-cover {
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  height: auto;
+  outline: auto;
+}
+
+div.album .album-info {
+
 }
