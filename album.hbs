@@ -8,25 +8,33 @@
       <link rel="stylesheet" href="{{relative 'public/lightgallery2/css/lightgallery-bundle.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/core.css'}}" />
       <link rel="stylesheet" href="{{relative 'public/theme.css'}}" />
+
+      <link rel="stylesheet" href="{{relative 'public/justifiedGallery.min/justifiedGallery.min.css'}}" />
+
   </head>
 
   <body>
 
     {{> content}}
-    {{!-- {{> video-loader}} TODO support video --}}
+    {{> video-loader}}
+
+    <!-- jquery -->
+    <script src="{{relative 'public/jquery.min.js'}}"></script>
+
 
     <!-- LightGallery -->
     <script src="{{relative 'public/lightgallery2/lightgallery.min.js'}}"></script>
     <script src="{{relative 'public/lightgallery2/plugins/zoom/lg-zoom.umd.js'}}"></script>
     <script src="{{relative 'public/lightgallery2/plugins/thumbnail/lg-thumbnail.umd.js'}}"></script>
     <script type="text/javascript">
-      lightGallery(document.getElementById('lightgallery'), {
+      lightGallery(document.getElementById('gallery'), {
         speed: 400,
         loop : false,
         controls: true,
         counter: true,
         download: false,
         appendSubHtmlTo: ".lg-sub-html", 
+        licenseKey: "GNU GPL license v3", // not for commercial use!
         
         thumbnail: true,
         toggleThumb: true,
@@ -40,6 +48,23 @@
       });
       console.log("started lightgallery")
     </script>
+
+    <!-- Justified gallery -->
+    <script src="{{relative 'public/justifiedGallery.min/jquery.justifiedGallery.min.js'}}"></script>
+    <script>
+      $("#gallery").justifiedGallery({
+        rowHeight: 240,
+        maxRowHeight: "200%",
+        lastRow: 'nojustify',
+        margins: 30,
+        captions: false,
+        border: 0,
+        cssAnimation: true,
+
+      });
+      console.log("started justifiedGallery")
+    </script>
+
 
   </body>
 </html>
