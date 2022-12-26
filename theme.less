@@ -1,172 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400;700;900&family=Libre+Barcode+128&family=Mrs+Saint+Delafield&display=swap');
 
-// // -----------------------------------
-// // Variables for user customisation
-// // -----------------------------------
+@breakpoint: 700px;
 
-// @body-background: #fff;
-// @body-color: #444;
-// @header-color: #444;
-// @nav-border: #ddd;
+#container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
 
-// // -----------------------------------
-// // Generic styles
-// // -----------------------------------
+.layout {
+  display: grid;
+  gap: 0;
+  min-height: 100vh;
+  grid-template-areas:
+    "side"
+    "content";
 
+  @media (min-width: @breakpoint) {
+    grid-template-columns: minmax(300px, 1fr) 3fr;
+    grid-template-areas: "side content";
+  }
+}
 
-// html {
-//   height: 100%;
-// }
+#side { 
+  grid-area: side;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: fixed;
 
-// html, body {
-//   padding: 0;
-//   margin: 0;
-// }
+  @media (min-width: @breakpoint) {
+    height: 100vh;
+  }
 
-// body {
-//   background: @body-background;
-//   color: @body-color;
-//   font-family: 'Futura';
-//   font-size: 16px;
-//   font-weight: lighter;
-//   margin-bottom: 1em;
-// }
+}
+#content { 
+  grid-area: content;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
 
-// a {
-//   color: blue;
-//   // text-decoration: none;
-// }
+}
 
+body {
+  font-family: "Inter";
+}
 
-// // -----------------------------------
-// // Structure
-// // -----------------------------------
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Inter', cursive;
+}
 
-// #container {
-//   padding: 2em;
-// }
+a {
+  text-decoration: none;
+  color: initial;
+}
 
-// // -----------------------------------
-// // Header
-// // -----------------------------------
-
-// header {
-//   font-size: 1.8em;
-//   margin-bottom: 1.1em;
-// }
-
-// h1 {
-//   display: inline-block;
-//   font-weight: bold;
-// }
-
-// h1 a {
-//   color: @header-color;
-// }
-
-// // -----------------------------------
-// // Footer
-// // -----------------------------------
-
-// footer {
-//   color: #666;
-//   font-size: 0.9em;
-//   font-style: italic;
-//   margin-top: 3em;
-// }
-
-// footer a {
-//   color: #17baef;
-// }
-
-// // -----------------------------------
-// // Breadcrumbs navigation
-// // -----------------------------------
-
-// nav.breadcrumbs {
-//   border-bottom: 1px solid @nav-border;
-//   font-size: 1.2em;
-//   margin-bottom: 2em;
-//   padding: 0em 0em 0.8em 0.1em;
-// }
-
-// // -----------------------------------
-// // Nested albums
-// // -----------------------------------
-
-// #albums, #media {
-//   margin: 0em;
-// }
-
-// #albums a {
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   display: inline-block;
-//   margin-right: 2em;
-//   margin-bottom: 3em;
-//   position: relative;
-//   overflow: hidden;
-//   width: 300px;
-//   height: 220px;
-//   background-size: cover;
-//   border-radius: 8px;
-// }
-
-// #albums .info {
-//   position: absolute;
-//   padding: 1em;
-//   background: rgba(0,0,0,0.3);
-//   color: #fff;
-//   font-size: 0.9em;
-//   line-height: 1.2em;
-//   margin: 0;
-//   width: 100%;
-//   font-weight: bold;
-//   bottom: 0;
-// }
-
-// #albums h3 {
-//   font-size: 1.3em;
-//   margin-bottom: 0.2em;
-// }
-
-// // -----------------------------------
-// // Photo and video thumbnails
-// // -----------------------------------
-
-// #media li {
-//   float: left;
-//   margin-right: 0.4em;
-//   margin-bottom: 0.2em;
-//   position: relative;
-//   cursor: zoom-in;
-// }
-
-// #media a {
-//   display: inline-block;
-// }
-
-// #media img {
-//   border-radius: 8px;
-//   display: block;
-// }
-
-// #media li .video-overlay {
-//   left: 50%;
-//   height: 48px;
-//   margin-left: -24px;
-//   margin-top: -24px;
-//   position: absolute;
-//   top: 50%;
-//   width: 48px;
-// }
-
-// // -----------------------------------
-// // Photo and video thumbnails
-// // -----------------------------------
-
-// @media only screen and (max-width: 360px) {
-//   #albums a {
-//     width: 100%;
-//     height: 190px;
-//   }
-// }
+footer {
+  font-family: 'Inter', cursive;
+}
