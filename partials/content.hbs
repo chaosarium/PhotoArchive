@@ -3,33 +3,52 @@
   <div class="layout">
     <div id="side">
 
-      <!-- Title -->
-      <header>
-        <h1><a href="{{relative gallery.home.url}}">{{gallery.title}}</a></h1>
-      </header>
+      {{~#if album.home~}}
 
-      <br>
+        <div class="top">
+          <!-- Title -->
+          <header>
+            <h1 class="site-heading"><a href="{{relative gallery.home.url}}">{{gallery.title}}</a></h1>
+            <p class="barcode">{{gallery.title}}</p>
+          </header>
+        </div>
 
-      <!-- Album breadcrumbs -->
-      <nav class="breadcrumbs">
-        {{#each breadcrumbs~}}
-        <a class="breadcrumb-item" href="{{relative url}}">{{title}}</a>&nbsp;/&nbsp;
-        {{~/each~}}
-        <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
-      </nav>
+        <div class="bottom">
 
-      <br>
+          <div class="website-info">
+            <p>Place for general website information</p>
 
-      <p>general info goes here</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde quam sint corporis temporibus eveniet, vel ab nostrum totam est ut.</p>
 
-      <br>
+            <p>This template: <a href="https://github.com/chaosarium/arxive">gihtub</a></p>
+          </div>
 
-      <!-- TODO Footer -->
-      {{#if gallery.footer}}
-      <footer>
-        <p>{{{gallery.footer}}}</p>
-      </footer>
-      {{/if}}
+        </div>
+
+      {{~else~}}
+
+        <div class="top">
+          <!-- Album breadcrumbs -->
+          <nav class="breadcrumbs">
+            {{#each breadcrumbs~}}
+            <a class="breadcrumb-item" href="{{relative url}}">{{title}}</a>&nbsp;/&nbsp;
+            {{~/each~}}
+            <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
+          </nav>
+        </div>
+
+        <div class="bottom">
+          <h1 class="album-heading">{{album.title}}</h1>
+          <h1 class="barcode">{{album.title}}</h1>
+          <p class="date-range">{{date album.stats.fromDate}} - {{date album.stats.toDate}}</p>
+          {{#if album.zip}}
+          <div class="zip">
+            <p>Download album as <a href="{{album.zip}}">zip</a>.</p>
+          </div>
+          {{/if}}
+        </div>
+
+      {{~/if~}}
 
     </div>
     <div id="content">
@@ -58,7 +77,11 @@
       {{/if}}
 
       <hr>
-      Some informatio
+      {{#if gallery.footer}}
+        <footer>
+          <p>{{{gallery.footer}}}</p>
+        </footer>
+      {{/if}}
 
     </div>
   </div>
@@ -78,12 +101,5 @@
     </nav>
   </div>
   {{/compare}}
-
-  <!-- TODO Zip file -->
-  {{#if album.zip}}
-  <div id="zip">
-    Download album as a <a href="{{album.zip}}">zip file</a>.
-  </div>
-  {{/if}}
 
 </div>
