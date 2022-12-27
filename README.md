@@ -2,6 +2,8 @@
 
 Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
 
+Note that video support and pagitation is not yet tested.
+
 ## How to use
 
 ### Dependencies
