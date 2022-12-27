@@ -4,7 +4,11 @@ Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
 
 ## How to use
 
+### Dependencies
+
 Install [thumbsup](https://thumbsup.github.io/) and its dependencies.
+
+### Input Structure
 
 Structure the input folder in a way that folders containing photos are albums. An album is allowed to contain subalbums. Example:
 
@@ -27,6 +31,8 @@ input
 ```
 
 Use the `IPTC - Content > Description` metadata to add caption for photos
+
+### Configuration
 
 Create a `config.json` file somewhere with the following information:
 
@@ -56,8 +62,33 @@ Create a `config.json` file somewhere with the following information:
 }
 ```
 
+### Build
+
 Then run the following to generate static website
 
 ```bash
 thumbsup --config "path/to/config.json"
 ```
+
+### Customise theme
+
+Motify any `.hbs` or `.less` file. 
+
+See [thumbup documentation](https://thumbsup.github.io/docs/4-themes/create/).
+
+### Deployment
+
+Any platform for deploying static website should work. Some ideas:
+- Netlify
+- GitHub Pages
+- Wunderbucket 
+
+## Licence
+
+Template files (i.e. those not in `public`) under MIT.
+
+Libraries:
+
+- Thumbsup is under MIT
+- lightGallery is under GNU GPL license v3
+- Justified Gallery is under MIT
