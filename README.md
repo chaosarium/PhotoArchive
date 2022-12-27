@@ -4,7 +4,29 @@ Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
 
 ## How to use
 
-Install [thumbsup](https://thumbsup.github.io/) and its dependencies
+Install [thumbsup](https://thumbsup.github.io/) and its dependencies.
+
+Structure the input folder in a way that folders containing photos are albums. An album is allowed to contain subalbums. Example:
+
+```txt
+input
+├── album1
+│   ├── group1
+│   │   ├── pic1.jpg
+│   │   └── pic2.jpg
+│   └── group2
+│       ├── pic3.jpg
+│       ├── pic4.jpg
+│       └── pic5.jpg
+├── album2
+│   ├── pic6.jpeg
+│   ├── pic7.jpg
+│   └── pic8.jpg
+├── standalone1.jpg
+└── standalone2.jpg
+```
+
+Use the `IPTC - Content > Description` metadata to add caption for photos
 
 Create a `config.json` file somewhere with the following information:
 
