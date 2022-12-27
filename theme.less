@@ -17,6 +17,11 @@
 @gap-size: 32px;
 @half-gap-size: calc(@gap-size / 2);
 
+body.dark-mode {
+  background-color: black;
+  color: white !important;
+}
+
 #container {
   max-width: 1920px;
   margin: 0 auto;
@@ -154,6 +159,7 @@ body {
   font-size: 16px;
   line-height: 1.2;
   color: @foreground;
+  background-color: @background;
 }
 
 p {
