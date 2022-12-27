@@ -49,8 +49,9 @@
 .barcode {
   font-family: 'Libre Barcode 128';
   font-size: 3em;
-  margin-top: 0.2em;
-  margin-bottom: -0.4em;
+  margin-top: 0.5em;
+  margin-bottom: -0.1em;
+  line-height: 0.8;
 }
 
 #side { 
@@ -120,10 +121,6 @@
     margin-bottom: @gap-size;
   }
 
-  footer p {
-    color: @tertiary;
-  }
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -136,6 +133,11 @@
   }
 
 }
+
+footer {
+  color: @tertiary;
+}
+
 #content { 
   grid-area: content;
   box-sizing: border-box;
