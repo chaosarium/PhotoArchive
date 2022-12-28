@@ -11,11 +11,13 @@
             <h1 class="site-heading"><a href="{{relative gallery.home.url}}">{{gallery.title}}</a></h1>
             <p class="barcode">{{gallery.title}}</p>
           </header>
+          {{> dark-light-toggle}}
         </div>
 
         <div class="bottom">
 
           <div class="website-info">
+
             <p>Place for general website information</p>
 
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde quam sint corporis temporibus eveniet, vel ab nostrum totam est ut.</p>
@@ -35,6 +37,7 @@
             {{~/each~}}
             <a class="breadcrumb-item" href="{{relative album.url}}">{{album.title}}</a>
           </nav>
+          {{> dark-light-toggle}}
         </div>
 
         <div class="bottom">
