@@ -155,7 +155,7 @@ body {
         transition-duration: @transition-time;
       }
     }
-    margin-bottom: @gap-size;
+    margin-bottom: @half-gap-size;
   }
 
   display: flex;
@@ -257,8 +257,16 @@ hr {
   border: none;
   border-top: var(--muted) solid 1px;
   margin: @gap-size 0;
+  &.hr-half {
+    margin: @half-gap-size 0;
+  }
 }
 
 .d-none {
   display: none;
+}
+
+.control-bar {
+  display: flex;
+  gap: 8px;
 }
