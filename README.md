@@ -1,3 +1,7 @@
+# Photo Archive Theme
+
+Easily turn folders of photos into static photo website
+
 ## Demo
 
 Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
