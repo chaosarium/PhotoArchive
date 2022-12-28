@@ -167,6 +167,7 @@ body {
   }
   .bottom {
     align-self: baseline;
+    margin-top: @half-gap-size;
   }
 
 }
@@ -178,7 +179,7 @@ footer {
 #content { 
   grid-area: content;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
   padding: 0 @gap-size @gap-size @gap-size;
   @media (min-width: @breakpoint-small) {
     padding: @gap-size;
