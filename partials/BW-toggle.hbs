@@ -10,13 +10,13 @@
         fill: var(--secondary);
         transition-duration: 500ms;
     }
-    [data-BW='BW'] img {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+    [data-BW='BW'] .lg-container img {
+        -webkit-filter: unset;
+        filter: unset;
     }
 </style>
 
-<div id="BW-mode-toggle">
+<div id="BW-mode-toggle" title="Toggle Black and White">
     
     <svg class="d-block-colour d-none" onclick="switchBW();"
         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
