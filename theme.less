@@ -1,25 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400;700;900&family=Libre+Barcode+128&family=Mrs+Saint+Delafield&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Inter:wght@300;400;700;900&family=Libre+Barcode+128');
 
 @breakpoint-small: 700px;
 @breakpoint-mid: 1000px;
 @breakpoint-large: 1200px;
 
 @transition-time: 500ms;
-
-@display-font: 'Fredericka the Great';
-
-@foreground: #000;
-@background: #fff;
-@secondary: rgb(141, 141, 141);
-@tertiary: rgb(177, 177, 177);
-@muted: rgb(234, 234, 234);
-
 @gap-size: 32px;
 @half-gap-size: calc(@gap-size / 2);
 
-body.dark-mode {
-  background-color: black;
-  color: white !important;
+@display-font: 'Fredericka the Great';
+@body-font: 'Inter';
+
+:root, html[data-theme='light'] {
+  --foreground: rgb(0, 0, 0);
+  --background: rgb(255, 255, 255);
+  --secondary: rgb(141, 141, 141);
+  --tertiary: rgb(177, 177, 177);
+  --muted: rgb(234, 234, 234);  
+}
+
+html[data-theme='dark'] {
+  --foreground: rgb(255, 255, 255);
+  --background: rgb(0, 0, 0);
+  --secondary: rgb(198, 198, 198);
+  --tertiary: rgb(138, 138, 138);
+  --muted: rgb(55, 55, 55);
+}
+
+body {
+  background-color: var(--background);
 }
 
 #container {
@@ -40,11 +49,11 @@ body.dark-mode {
     grid-template-areas: "side content";
   }
   @media (min-width: @breakpoint-mid) {
-    grid-template-columns: minmax(300px, 1fr) 3fr;
+    grid-template-columns: minmax(320px, 1fr) 3fr;
     grid-template-areas: "side content";
   }
   @media (min-width: @breakpoint-large) {
-    grid-template-columns: minmax(400px, 1fr) 3fr;
+    grid-template-columns: minmax(420px, 1fr) 3fr;
     grid-template-areas: "side content";
   }
 
@@ -53,10 +62,25 @@ body.dark-mode {
 
 .barcode {
   font-family: 'Libre Barcode 128';
-  font-size: 3em;
-  margin-top: 0.5em;
+  font-size: 2em;
+  margin-top: 0.6em;
   margin-bottom: -0.1em;
   line-height: 0.8;
+
+
+  @media (min-width: @breakpoint-mid) {
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: -0.1em;
+    line-height: 0.8;
+  }
+  @media (min-width: @breakpoint-large) {
+    font-size: 3em;
+    margin-top: 0.5em;
+    margin-bottom: -0.1em;
+    line-height: 0.8;
+  }
+
 }
 
 #side { 
@@ -71,7 +95,7 @@ body.dark-mode {
   }
 
   div.website-info {
-    color: @secondary;
+    color: var(--secondary);
   }
 
   h1.site-heading {
@@ -79,20 +103,28 @@ body.dark-mode {
     font-weight: bold;
     font-variant: small-caps;
     font-family: @display-font;
-    @media (min-width: @breakpoint-small) {
+    @media (min-width: @breakpoint-mid) {
       font-size: 2.2em;
+      display:table-caption;
+    }
+    @media (min-width: @breakpoint-large) {
+      font-size: 2.6em;
       display:table-caption;
     }
   }
   
   h1.album-heading {
-    font-size: 2.4em;
+    font-size: 1.8em;
     font-weight: bold;
     font-family: @display-font;
     font-variant: small-caps;
 
-    @media (min-width: @breakpoint-small) {
-      font-size: 2.8em;
+    @media (min-width: @breakpoint-mid) {
+      font-size: 2.2em;
+      display:table-caption;
+    }
+    @media (min-width: @breakpoint-large) {
+      font-size: 2.6em;
       display:table-caption;
     }
   
@@ -100,26 +132,26 @@ body.dark-mode {
 
   p.date-range {
     font-size: 1em;
-    color: @tertiary;
+    color: var(--tertiary);
   }
 
   .zip p {
-    color: @tertiary;
+    color: var(--tertiary);
     a {
       &:hover {
-        color: @secondary;
+        color: var(--secondary);
         transition-duration: @transition-time;
       }
     }
   }
 
   .breadcrumbs {
-    color: @secondary;
+    color: var(--secondary);
     a {
       text-decoration: underline;
-      color: @tertiary;
+      color: var(--tertiary);
       &:hover {
-        color: @secondary;
+        color: var(--secondary);
         transition-duration: @transition-time;
       }
     }
@@ -140,7 +172,7 @@ body.dark-mode {
 }
 
 footer {
-  color: @tertiary;
+  color: var(--tertiary);
 }
 
 #content { 
@@ -155,11 +187,11 @@ footer {
 }
 
 body {
-  font-family: "Inter";
+  font-family: @body-font;
   font-size: 16px;
   line-height: 1.2;
-  color: @foreground;
-  background-color: @background;
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 p {
@@ -175,7 +207,7 @@ a {
 }
 
 footer {
-  font-family: 'Inter';
+  font-family: @body-font;
 }
 
 #albums {
@@ -198,9 +230,6 @@ footer {
   column-gap: @gap-size;
 }
 
-div.album {
-}
-
 div.album img.album-cover {
   object-fit: cover;
   aspect-ratio: 3 / 2;
@@ -219,16 +248,17 @@ div.album .album-info {
     font-weight: 400;
   }
   .album-count {
-    color: @tertiary;
+    color: var(--tertiary);
     font-weight: 300;
   }
 }
 
 hr {
   border: none;
-  border-top: @muted solid 1px;
+  border-top: var(--muted) solid 1px;
   margin: @gap-size 0;
 }
 
-div.gallery {
+.d-none {
+  display: none;
 }
