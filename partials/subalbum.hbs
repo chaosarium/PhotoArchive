@@ -3,8 +3,8 @@
         <img class="album-cover" src="{{relative previews.0.urls.small}}" alt="{{relative previews.0.filename}}">
 
         <div class="album-info">
-            <div class="album-title">{{title}}</div>
-            <div class="album-count">{{stats.photos}}</div>
+            <div class="album-title">{{title}} <span class="album-count">({{stats.photos}})</span></div>
+            <div class="album-last-updated">{{monthYear stats.toDate}}</div>
         </div>
     </a>
 </div>
