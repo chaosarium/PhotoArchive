@@ -88,7 +88,6 @@ footer {
 .layout {
   display: grid;
   gap: 0;
-  min-height: 100vh;
   grid-template-areas:
     "side"
     "content";
@@ -96,6 +95,7 @@ footer {
   @media (min-width: @breakpoint-small) {
     grid-template-columns: minmax(280px, 1fr) 3fr;
     grid-template-areas: "side content";
+    min-height: 100vh;
   }
   @media (min-width: @breakpoint-mid) {
     grid-template-columns: minmax(320px, 1fr) 3fr;
