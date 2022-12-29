@@ -1,21 +1,3 @@
-<style>
-    [data-BW='colour'] .d-block-colour,
-    [data-BW='BW'] .d-block-BW {
-        display: block;
-        cursor: pointer;
-        fill: var(--tertiary);
-    }
-    [data-BW='colour'] .d-block-colour:hover,
-    [data-BW='BW'] .d-block-BW:hover {
-        fill: var(--secondary);
-        transition-duration: 500ms;
-    }
-    [data-BW='BW'] .lg-container img {
-        -webkit-filter: unset;
-        filter: unset;
-    }
-</style>
-
 <div id="BW-mode-toggle" title="Toggle Black and White">
     
     <svg class="d-block-colour d-none" onclick="switchBW();"

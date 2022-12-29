@@ -16,6 +16,8 @@ Note that video support and pagitation is not yet tested.
 
 Install [thumbsup](https://thumbsup.github.io/) and its dependencies.
 
+Run `npm install moment` in working directory. Time parsing depends on this.
+
 ### Input Structure
 
 Structure the input folder in a way that folders containing photos are albums. An album is allowed to contain subalbums. Example:
