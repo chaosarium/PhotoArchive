@@ -86,6 +86,10 @@ Motify any `.hbs` or `.less` file.
 
 See [thumbup documentation](https://thumbsup.github.io/docs/4-themes/create/).
 
+### Random
+
+It's possible to specify album preview images. See [here](https://github.com/thumbsup/thumbsup/pull/318)
+
 ### Deployment
 
 Any platform for deploying static website should work. Some ideas:
