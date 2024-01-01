@@ -4,7 +4,7 @@ Easily turn folders of photos into static photo website
 
 ## Demo
 
-Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
+Demo: https://gallerybeta.chaosarium.xyz/
 
 ![Capture d’écran 2022-12-27 at 23 36 52](https://user-images.githubusercontent.com/38693485/209758196-c231e82e-3fa3-4cc4-b6e0-01445e8e7040.jpg)
 
