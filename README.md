@@ -8,7 +8,7 @@ Demo: https://gallerybeta-chaosarium.wunderbucket.dev/
 
 ![Capture d’écran 2022-12-27 at 23 36 52](https://user-images.githubusercontent.com/38693485/209758196-c231e82e-3fa3-4cc4-b6e0-01445e8e7040.jpg)
 
-Note that video support and pagination is not yet tested.
+Note that video support and pagination are not yet tested.
 
 ## How to use
 
@@ -16,7 +16,7 @@ Note that video support and pagination is not yet tested.
 
 Install [thumbsup](https://thumbsup.github.io/) and its dependencies.
 
-Run `npm install moment` in working directory. Time parsing depends on this.
+Run `npm install moment` in the working directory. Time parsing depends on this.
 
 ### Input Structure
 
@@ -40,7 +40,7 @@ input
 └── standalone2.jpg
 ```
 
-Use the `IPTC - Content > Description` metadata to add caption for photos
+Use the `IPTC - Content > Description` metadata to add captions for photos
 
 ### Configuration
 
